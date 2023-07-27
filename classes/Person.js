@@ -2,6 +2,8 @@
 //constructor creates the object, takes in parameters
 //node allows us to run JS outside the browser
 class Person{
+    #health = 100;
+
     constructor(name, type , location){
         this.name = name;
         this.type = type;
@@ -22,6 +24,25 @@ class Person{
 
     }
     
+    getHealth() {
+        return `${this.health} hp`
+    }
+
+    drinkPotion(healthToIncrease) {
+        if (this.#health + healthToIncrease > 100) {
+            this.#health = 100
+        } else {
+            this.#health += healthToIncrease;
+        }
+    }
+
+    takeDamage(healthToDecrease) {
+        if (this.#health - healthToDecrease < 100) {
+            this.#health = 0
+        } else {
+            this.#health -= healthToDecrease;
+        }
+    }
 
 }
 

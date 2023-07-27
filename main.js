@@ -42,6 +42,15 @@ function main(){
     console.log(NPC.NPC_COUNT)
     console.log(NPC.tellTime())
 
+    console.log(" === PRIVATE PROPERTY GETTERS & SETTERS ===");
+    console.log(person1.getHealth());
+
+    person1.drinkPotion(200);
+    console.log(person1.getHealth());
+
+    person1.takeDamage(200);
+    console.log(person1.getHealth());
+
 }
 
 main();
